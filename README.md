@@ -31,12 +31,13 @@ PressEnterToSend: false
 
 This project using CMake for its build system.
 
-To build a release version:
+Quick build and install (from the project directory):
 ```sh
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
 make
+make install
 ```
 
 *TODO: provide installation instructions*
