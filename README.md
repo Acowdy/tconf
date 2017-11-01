@@ -56,3 +56,11 @@ DefaultStatus: Online
 
 PressEnterToSend: false
 ```
+
+## Authors
+
+* **Adam Cowdy** ([Acowdy](https://github.com/Acowdy)) <cowdyadam@gmail.com> - Initial work
+
+## License
+
+This project is licensed under the Apache License version 2.0 - see LICENSE-2.0 for details.
