@@ -38,3 +38,7 @@ tconf_parser_t *tconf_new_string_parser(char *string) {
     parser->input.string = string;
     return parser;
 }
+
+void tconf_delete_parser(tconf_parser_t *parser) {
+    free(parser);
+}
