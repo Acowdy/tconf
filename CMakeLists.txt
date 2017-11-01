@@ -26,3 +26,4 @@ enable_testing()
 
 # Add tests here
 add_exe_test(new_file_parser_reference_is_valid)
+add_exe_test(new_string_parser_reference_is_valid)

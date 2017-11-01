@@ -12,16 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef TCONF_H
-#define TCONF_H
-
+#include "testing.h"
 #include <stdio.h>
+#include <tconf.h>
 
-typedef struct tconf_parser {
-    // TODO
-} tconf_parser_t;
+TEST_CASE
 
-tconf_parser_t *tconf_new_file_parser(FILE *file);
-tconf_parser_t *tconf_new_string_parser(char *string);
+// We don't care if the file was successfully opened, so no error checking
+char *s = "Example: true";
+tconf_parser_t *parser = tconf_new_string_parser(s);
+assert(parser != NULL);
 
-#endif
+END_TEST_CASE

@@ -18,3 +18,7 @@
 tconf_parser_t *tconf_new_file_parser(FILE *file) {
     return NULL;
 }
+
+tconf_parser_t *tconf_new_string_parser(char *string) {
+    return NULL;
+}
