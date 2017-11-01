@@ -21,3 +21,8 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 add_subdirectory(tests)
+
+enable_testing()
+
+# Add tests here
+add_exe_test(new_file_parser_reference_is_valid)

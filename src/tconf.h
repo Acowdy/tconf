@@ -15,7 +15,12 @@
 #ifndef TCONF_H
 #define TCONF_H
 
-// Temporary symbol, will be removed later
-void print_hello();
+#include <stdio.h>
+
+typedef struct tconf_parser {
+    // TODO
+} tconf_parser_t;
+
+tconf_parser_t *tconf_new_file_parser(FILE *file);
 
 #endif

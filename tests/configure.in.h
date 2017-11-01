@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "tconf.h"
-#include <stdio.h>
+#ifndef CONFIGURE_H
+#define CONFIGURE_H
 
-tconf_parser_t *tconf_new_file_parser(FILE *file) {
-    return NULL;
-}
+#define TEST_DATA_PATH "${TEST_DATA_PATH}"
+
+#endif

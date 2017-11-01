@@ -12,9 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "tconf.h"
+#include "testing.h"
+#include <tconf.h>
 #include <stdio.h>
 
-tconf_parser_t *tconf_new_file_parser(FILE *file) {
-    return NULL;
+TEST_CASE {
+    // We don't care if the file was successfully opened, so no error checking
+    FILE *infile = fopen(TEST_DATA_PATH "empty.conf", "r");
+    tconf_parser_t *parser = tconf_new_file_parser(infile);
+    assert_false(parser == NULL, "new parser reference is NULL");
 }

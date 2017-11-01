@@ -12,9 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "tconf.h"
-#include <stdio.h>
+#ifndef TESTING_H
+#define TESTING_H
 
-tconf_parser_t *tconf_new_file_parser(FILE *file) {
-    return NULL;
+#include <configure.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TEST_CASE int main(int argc, char **argv)
+
+void assert_true(int cond, char *failmsg) {
+    if (!cond) {
+        fprintf(stderr, "assertion failed: %s\n", failmsg);
+        exit(1);
+    }
 }
+
+void assert_false(int cond, char *failmsg) {
+    if (cond) {
+        fprintf(stderr, "assertion failed: %s\n", failmsg);
+        exit(1);
+    }
+}
+
+#endif
