@@ -11,6 +11,35 @@ Plain text configuration files offer a number of advantages:
 * Every system has a plain text editor, meaning you can modify your settings over SSH or on a system where you have no administrative rights to install new software
 * You can document settings using comments
 
+## Installation on Mac OS X
+
+Currently the only way to install tconf is to build it from source.
+
+### Build prerequisites:
+* [XCode](https://itunes.apple.com/gb/app/xcode/id497799835) and [the Command Line Tools](https://developer.apple.com/download/more/) (tested with XCode version 9.0)
+* [CMake](https://cmake.org/download/) version 2.8 or later
+* Optional: [Doxygen](http://www.stack.nl/~dimitri/doxygen/download.html), required for building documentation (building documentation is enabled by default)
+
+### Build and install
+
+To build and install tconf onto your system, run the following commands in a terminal
+
+```sh
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ..
+make
+make install
+```
+
+## Installation on Linux
+
+*Note from the author: I currently do not have a Linux machine for testing, so I cannot verify an installation process, however the instructions given for Mac OS might work.*
+
+## Installation on Windows
+
+*Note from the author: I currently do not have a Windows machine for testing, so I cannot verify an installation process.*
+
 ## Syntax of a tconf configuration file
 
 The format parsed by tconf is very simple; it consists of a sequence of key-value pairs.
@@ -26,17 +55,4 @@ UserAvatarPath: "~/Pictures/Avatar.png"
 DefaultStatus: Online
 
 PressEnterToSend: false
-```
-
-## Getting Started
-
-This project using CMake for its build system.
-
-Quick build and install (from the project directory):
-```sh
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
-make
-make install
 ```
