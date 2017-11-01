@@ -14,6 +14,7 @@
 
 #include "tconf.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define TCONF_INPUT_SOURCE_FILE 0
 #define TCONF_INPUT_SOURCE_STRING 1
