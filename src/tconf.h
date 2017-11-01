@@ -18,7 +18,11 @@
 #include <stdio.h>
 
 typedef struct tconf_parser {
-    // TODO
+    int input_source_tag;
+    union {
+        FILE *file;
+        char *string;
+    } input;
 } tconf_parser_t;
 
 tconf_parser_t *tconf_new_file_parser(FILE *file);

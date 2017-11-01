@@ -15,10 +15,25 @@
 #include "tconf.h"
 #include <stdio.h>
 
+#define TCONF_INPUT_SOURCE_FILE 0
+#define TCONF_INPUT_SOURCE_STRING 1
+
 tconf_parser_t *tconf_new_file_parser(FILE *file) {
-    return NULL;
+    tconf_parser_t *parser = malloc(sizeof(tconf_parser_t));
+    if (parser == NULL) {
+        return NULL;
+    }
+    parser->input_source_tag = TCONF_INPUT_SOURCE_FILE;
+    parser->input.file = file;
+    return parser;
 }
 
 tconf_parser_t *tconf_new_string_parser(char *string) {
-    return NULL;
+    tconf_parser_t *parser = malloc(sizeof(tconf_parser_t));
+    if (parser == NULL) {
+        return NULL;
+    }
+    parser->input_source_tag = TCONF_INPUT_SOURCE_STRING;
+    parser->input.string = string;
+    return parser;
 }
