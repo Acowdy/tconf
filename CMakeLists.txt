@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(tconf LANGUAGES C)
 
+option(BUILD_SHARED_LIBS "Build all libraries as shared libraries" ON)
 option(BUILD_TESTS "Build the unit and integration tests for this project" ON)
 # option(BUILD_DOCS "Build and install HTML based documentation and man pages (requires Doxygen)")
 
