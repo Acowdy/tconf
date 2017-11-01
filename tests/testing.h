@@ -19,20 +19,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TEST_CASE int main(int argc, char **argv)
+#define TEST_CASE int main(int argc, char **argv) {
 
-void assert_true(int cond, char *failmsg) {
-    if (!cond) {
-        fprintf(stderr, "assertion failed: %s\n", failmsg);
-        exit(1);
-    }
-}
+#define END_TEST_CASE }
 
-void assert_false(int cond, char *failmsg) {
-    if (cond) {
-        fprintf(stderr, "assertion failed: %s\n", failmsg);
-        exit(1);
+#define assert(condition)                                                      \
+    {                                                                          \
+        if (!(condition)) {                                                    \
+            fprintf(                                                           \
+                stderr,                                                        \
+                "Assertion (%s) failed in test case %s, file %s, line %d\n",   \
+                #condition, argv[0], __FILE__, __LINE__);                      \
+            exit(1);                                                           \
+        }                                                                      \
     }
-}
+
+// void assert_true(int cond, char *failmsg) {
+//     if (!cond) {
+//         fprintf(stderr, "assertion failed: %s\n", failmsg);
+//         exit(1);
+//     }
+// }
+
+// void assert_false(int cond, char *failmsg) {
+//     if (cond) {
+//         fprintf(stderr, "assertion failed: %s\n", failmsg);
+//         exit(1);
+//     }
+// }
 
 #endif

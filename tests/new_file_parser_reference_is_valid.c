@@ -13,12 +13,14 @@
 // limitations under the License.
 
 #include "testing.h"
-#include <tconf.h>
 #include <stdio.h>
+#include <tconf.h>
 
-TEST_CASE {
-    // We don't care if the file was successfully opened, so no error checking
-    FILE *infile = fopen(TEST_DATA_PATH "empty.conf", "r");
-    tconf_parser_t *parser = tconf_new_file_parser(infile);
-    assert_false(parser == NULL, "new parser reference is NULL");
-}
+TEST_CASE
+
+// We don't care if the file was successfully opened, so no error checking
+FILE *infile = fopen(TEST_DATA_PATH "empty.conf", "r");
+tconf_parser_t *parser = tconf_new_file_parser(infile);
+assert(parser != NULL);
+
+END_TEST_CASE
