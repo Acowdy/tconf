@@ -1,7 +1,8 @@
 # tconf
-## Lightweight library for parsing plain-text configuration files
 
 **NOTE: tconf is very much a work in progress, use at your own risk!**
+
+Most non-trivial applications have configuration files to define their initial settings. tconf exists as a low-overhead helper library for parsing configuration files with a specified format.
 
 Plain text configuration files offer a number of advantages:
 * There are many text editors, meaning that users can tweak their settings with their preferred application
@@ -10,13 +11,13 @@ Plain text configuration files offer a number of advantages:
 * Every system has a plain text editor, meaning you can modify your settings over SSH or on a system where you have no administrative rights to install new software
 * You can document settings using comments
 
-### Syntax of a tconf configuration file
+## Syntax of a tconf configuration file
 
 The format parsed by tconf is very simple; it consists of a sequence of key-value pairs.
 
 The following is an example configuration file for a simple instant messaging client:
 
-```yaml
+```conf
 # Comments start with a hash and continue until the end of the line
 Username: "Longboi"
 UserAvatarPath: "~/Pictures/Avatar.png"
@@ -27,7 +28,7 @@ DefaultStatus: Online
 PressEnterToSend: false
 ```
 
-### Building and Installing
+## Getting Started
 
 This project using CMake for its build system.
 
