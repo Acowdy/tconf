@@ -46,10 +46,10 @@ The format parsed by tconf is very simple; it consists of a sequence of key-valu
 
 The following is an example configuration file for a simple instant messaging client:
 
-```conf
+```
 # Comments start with a hash and continue until the end of the line
-Username: "Longboi"
-UserAvatarPath: "~/Pictures/Avatar.png"
+Username: Longboi
+UserAvatarPath: ~/Pictures/Avatar.png
 
 # May either be 'Online', 'Busy', 'Away' and 'Offline'
 DefaultStatus: Online
@@ -59,7 +59,7 @@ PressEnterToSend: false
 
 ## Authors
 
-* **Adam Cowdy** ([Acowdy](https://github.com/Acowdy)) <cowdyadam@gmail.com> - Initial work
+* **Adam Cowdy** ([Acowdy](https://github.com/Acowdy)) \<cowdyadam@gmail.com> - Initial work
 
 ## License
 
