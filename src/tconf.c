@@ -42,3 +42,12 @@ tconf_parser_t *tconf_new_string_parser(char *string) {
 void tconf_delete_parser(tconf_parser_t *parser) {
     free(parser);
 }
+
+setting_t *tconf_parse(tconf_parser_t *parser) {
+    // TODO
+    return NULL;
+}
+
+void tconf_delete_setting(setting_t *setting) {
+    // TODO
+}
