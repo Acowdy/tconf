@@ -14,15 +14,6 @@ add_library(${PROJECT_NAME}
     src/tconf.c
 )
 
-# target_include_directories(${PROJECT_NAME} PUBLIC
-#     # Put include directories here
-#     # ${CMAKE_SOURCE_DIR}/include
-# )
-
-# target_link_libraries(${PROJECT_NAME}
-#     # Put library dependencies here
-# )
-
 if(BUILD_TESTS)
     add_subdirectory(tests)
     enable_testing()
