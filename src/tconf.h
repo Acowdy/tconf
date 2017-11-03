@@ -39,7 +39,7 @@ tconf_parser_t *tconf_new_file_parser(FILE *file);
 tconf_parser_t *tconf_new_string_parser(char *string);
 void tconf_delete_parser(tconf_parser_t *parser);
 
-int *tconf_parse(tconf_parser_t *parser, tconf_setting_t *setting);
+int tconf_parse(tconf_parser_t *parser, tconf_setting_t *setting);
 
 tconf_setting_t *tconf_new_setting();
 void tconf_delete_setting(tconf_setting_t *setting);
