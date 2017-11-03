@@ -30,4 +30,5 @@ if(BUILD_TESTS)
     # Add tests here
     add_exe_test(new_file_parser_reference_is_valid)
     add_exe_test(new_string_parser_reference_is_valid)
+    add_exe_test(parsing_empty_file_returns_status_end)
 endif()
