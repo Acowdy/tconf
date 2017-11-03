@@ -25,19 +25,23 @@ typedef struct tconf_parser {
     } input;
 } tconf_parser_t;
 
-typedef struct setting {
+enum tconf_status_code {
+    TCONF_STATUS_SUCCESS,
+    TCONF_STATUS_END
+};
+
+typedef struct tconf_setting {
     char *key;
     char *value;
-} setting_t;
+} tconf_setting_t;
 
 tconf_parser_t *tconf_new_file_parser(FILE *file);
 tconf_parser_t *tconf_new_string_parser(char *string);
-
 void tconf_delete_parser(tconf_parser_t *parser);
 
-// Returns a setting_t or NULL if the end of the string/file is reached.
-setting_t *tconf_parse(tconf_parser_t *parser);
+int *tconf_parse(tconf_parser_t *parser, tconf_setting_t *setting);
 
-void tconf_delete_setting(setting_t *setting);
+tconf_setting_t *tconf_new_setting();
+void tconf_delete_setting(tconf_setting_t *setting);
 
 #endif
