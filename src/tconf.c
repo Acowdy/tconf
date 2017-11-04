@@ -49,9 +49,10 @@ int tconf_parse(tconf_parser_t *parser, tconf_setting_t *setting) {
 }
 
 tconf_setting_t *tconf_new_setting() {
-    return NULL;
+    return malloc(sizeof(tconf_new_setting));
 }
 
 void tconf_delete_setting(tconf_setting_t *setting) {
-    // TODO
+    free(setting->key);
+    free(setting->value);
 }
