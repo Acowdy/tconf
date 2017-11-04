@@ -14,6 +14,7 @@
 
 #include "tconf.h"
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 #define TCONF_INPUT_SOURCE_FILE 0
@@ -49,10 +50,25 @@ int tconf_parse(tconf_parser_t *parser, tconf_setting_t *setting) {
 }
 
 tconf_setting_t *tconf_new_setting() {
-    return malloc(sizeof(tconf_new_setting));
+    tconf_setting_t *setting = malloc(sizeof(tconf_setting_t));
+
+    setting->key_buf_len = 16;
+    setting->key = malloc(sizeof(char) * setting->key_buf_len);
+    if (setting->key == NULL) {
+        return NULL;
+    }
+
+    setting->value_buf_len = 16;
+    setting->value = malloc(sizeof(char) * setting->value_buf_len);
+    if (setting->value == NULL) {
+        return NULL;
+    }
+
+    return setting;
 }
 
 void tconf_delete_setting(tconf_setting_t *setting) {
     free(setting->key);
     free(setting->value);
+    free(setting);
 }

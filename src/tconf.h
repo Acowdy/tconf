@@ -32,7 +32,9 @@ enum tconf_status_code {
 
 typedef struct tconf_setting {
     char *key;
+    int key_buf_len;
     char *value;
+    int value_buf_len;
 } tconf_setting_t;
 
 tconf_parser_t *tconf_new_file_parser(FILE *file);
